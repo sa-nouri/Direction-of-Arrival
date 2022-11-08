@@ -33,4 +33,3 @@ that adaptively changes weights at every continuation step.
 adp_wt = 1 sets the flag for adaptive reweighting
 
 See SpaRSA_adpW.m for the details.
-%------------------------------------------------------------
