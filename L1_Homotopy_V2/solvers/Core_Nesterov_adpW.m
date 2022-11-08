@@ -92,15 +92,6 @@ function [xk,niter,residuals,outputData,opts] = Core_Nesterov(...
 %           outputData - a matrix, where each row r is the output
 %               from opts.outFcn, if supplied.
 %           opts - the structure containing the options that were used      
-%
-% Written by: Jerome Bobin, Caltech
-% Email: bobin@acm.caltech.edu
-% Created: February 2009
-% Modified: May 2009, Jerome Bobin and Stephen Becker, Caltech
-% Modified: Nov 2009, Stephen Becker
-%
-% NESTA Version 1.1
-%   See also NESTA
 
 %---- Set defaults
 % opts = [];
@@ -245,7 +236,6 @@ for k = 0:maxiter-1,
    if strcmpi(TypeMin,'TV')  [df,fx] = Perform_TV_Constraint(xk,mu,Dv,Dh,D,U,Ut);end
    
    %---- Primal Problem
-   
    %---- Updating yk 
     
     %

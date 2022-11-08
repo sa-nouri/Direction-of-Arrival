@@ -1,18 +1,10 @@
 % DynamicSeq_REC_demo.m
 % Robust ell_1 decoding with homotopy update scheme for new measurements.
 %
-% Created by Salman Asif @ Georgia Tech
-% February 2009
-%
 % Model changes in the error patterns with new measurements and observe the
 % effect on the solution.
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
-%-------------------------------------------+
 
-clear
-close all
+close all; close: clc;
 
 % % load fixed random states
 % load RandomStates
@@ -149,17 +141,17 @@ figure(3); clf; plot(cp_h); hold on; plot(c,'ro');
 title(['Estimated and original sparse errors after new ', num2str(m_u),' measurements']);
 legend('Estimated', 'Original'); shg
 
-% % Check the solution using cvx
-% cvx_begin
-%     cvx_precision high
-%     variables cp_cvx(M+m_u) zp_cvx(M+m_u) ;
-%     minimize( tau*(norm(cp_cvx,1))+ .5*(sum(square(zp_cvx))))
-%     subject to 
-%     zp_cvx == P*(cp_cvx-s)
-% cvx_end
-% 
-% % figure(103); clf; plot(cp_h); hold on; plot(cp2,'kx'); plot([cp_cvx; dp_cvx],'r.')
-% figure(10); hold on; plot(cp_cvx-cp_h); shg
+% Check the solution using cvx
+cvx_begin
+    cvx_precision high
+    variables cp_cvx(M+m_u) zp_cvx(M+m_u) ;
+    minimize( tau*(norm(cp_cvx,1))+ .5*(sum(square(zp_cvx))))
+    subject to 
+    zp_cvx == P*(cp_cvx-s)
+cvx_end
+
+% figure(103); clf; plot(cp_h); hold on; plot(cp2,'kx'); plot([cp_cvx; dp_cvx],'r.')
+figure(10); hold on; plot(cp_cvx-cp_h); shg
 
 % Check the solution using homotopy from scratch.
 [cp2, gamma_c2, cp2_iter, t2] = BPDN_homotopy_function(P, P*s, tau, 4*M);

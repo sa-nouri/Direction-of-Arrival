@@ -11,12 +11,6 @@
 %           compare recovery using block-based DWT (sym=0) and
 %           overlapping DWT (sym = 3) near line 80
 % We can also add any other regularization operator in the reconstruction
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: March 2013
-%
-% TODO: this code needs some debugging (not stable)... 
 
 clear
 close all force
@@ -336,61 +330,61 @@ while ~done
         %  Linear prediction for the incoming samples %
         % --------------------------------------------%
         %
-        %         xh1 = xh(end-N+1:end);
-        %
-        %         if strcmpi(eType,'per')
-        %             % periodic extension
-        %             xh1 = xh(end-N+1:end);
-        %         else
-        %             sig_temp = PSI_M(1:end-N,1:(P-1)*N)*xh(1:end-N);
-        %             sig_temp(1:L-N) = sig_temp(1:L-N)+Psi(end-(L-N)+1:end,:)*xh_old(1:N);
-        %             % if sim == 1
-        %             %     fprintf('Extension type: %s \n',eType);
-        %             % end
-        %             switch eType
-        %                 case 'asym'
-        %                     % anti-symmetric extension
-        %                     sig_temp2 = [sig_temp; -sig_temp(end:-1:1); sig_temp];
-        %                 case 'sym'
-        %                     % symmetrci extension
-        %                     sig_temp2 = [sig_temp; sig_temp(end:-1:1); sig_temp];
-        %                 otherwise
-        %                     disp('cant do it sire');
-        %             end
-        %             sig_temp2 = sig_temp2(1:size(PSI,1));
-        %             if sym == 1 || sym == 2
-        %                 xh_temp = pinv(PSI'*PSI)*(PSI'*sig_temp2);
-        %             else
-        %                 xh_temp = PSI'*sig_temp2;
-        %             end
-        %             xh1 = xh_temp(end-N+1:end);
-        %         end
-        %
-        %         gamma1 = find(abs(xh1)>tau);
-        %         [val ind] = sort(abs(xh1),'descend');
-        %         gamma1 = ind(1:min(length(gamma1),ceil(M/log2(N))));
-        %
-        %         yt = y(end-M+1:end)-A(end-M+1:end,1:end-N)*xh(1:end-N);
-        %         At = A(end-M+1:end,end-N+1:end);
-        %         gamma3 = gamma1;
-        %         %
-        %         % NOTE TODO: Need to replace prediction with rank-update...
-        %         %
-        %         % gamma_all = [find(xh(1:end-N)); gamma3+(P-1)*N];
-        %         % xh_all = 0*xh;
-        %         % xh_all(gamma_all) = A(:,gamma_all)\y; % pinv(A(:,gamma_all)'*A(:,gamma_all))*(A(:,gamma_all)'*y-W(gamma_all).*sign(xh(gamma_all)));
-        %
-        %         % if SM == 3
-        %         %     Aty = At'*yt;
-        %         %     [val ind] = sort(abs(Aty),'descend');
-        %         %     gamma2 = ind(1:min(length(gamma1),ceil(M/4)));
-        %         %     gamma3 = union(gamma1,gamma2);
-        %         % end
-        %         %
-        %         xh_t1 = 0*xh(end-N+1:end);
-        %         xh_t1(gamma3) = pinv(At(:,gamma3)'*At(:,gamma3)+2*tau*eye(length(gamma3)))*(At(:,gamma3)'*yt);
-        %         xh_t1(abs(xh_t1)<tau/sqrt(log(P*N))) = 0;
-        %         xh(end-N+1:end) = xh_t1;
+                xh1 = xh(end-N+1:end);
+        
+                if strcmpi(eType,'per')
+                    % periodic extension
+                    xh1 = xh(end-N+1:end);
+                else
+                    sig_temp = PSI_M(1:end-N,1:(P-1)*N)*xh(1:end-N);
+                    sig_temp(1:L-N) = sig_temp(1:L-N)+Psi(end-(L-N)+1:end,:)*xh_old(1:N);
+                    % if sim == 1
+                    %     fprintf('Extension type: %s \n',eType);
+                    % end
+                    switch eType
+                        case 'asym'
+                            % anti-symmetric extension
+                            sig_temp2 = [sig_temp; -sig_temp(end:-1:1); sig_temp];
+                        case 'sym'
+                            % symmetrci extension
+                            sig_temp2 = [sig_temp; sig_temp(end:-1:1); sig_temp];
+                        otherwise
+                            disp('cant do it sire');
+                    end
+                    sig_temp2 = sig_temp2(1:size(PSI,1));
+                    if sym == 1 || sym == 2
+                        xh_temp = pinv(PSI'*PSI)*(PSI'*sig_temp2);
+                    else
+                        xh_temp = PSI'*sig_temp2;
+                    end
+                    xh1 = xh_temp(end-N+1:end);
+                end
+        
+                gamma1 = find(abs(xh1)>tau);
+                [val ind] = sort(abs(xh1),'descend');
+                gamma1 = ind(1:min(length(gamma1),ceil(M/log2(N))));
+        
+                yt = y(end-M+1:end)-A(end-M+1:end,1:end-N)*xh(1:end-N);
+                At = A(end-M+1:end,end-N+1:end);
+                gamma3 = gamma1;
+                %
+                % NOTE TODO: Need to replace prediction with rank-update...
+                %
+                % gamma_all = [find(xh(1:end-N)); gamma3+(P-1)*N];
+                % xh_all = 0*xh;
+                % xh_all(gamma_all) = A(:,gamma_all)\y; % pinv(A(:,gamma_all)'*A(:,gamma_all))*(A(:,gamma_all)'*y-W(gamma_all).*sign(xh(gamma_all)));
+        
+                % if SM == 3
+                %     Aty = At'*yt;
+                %     [val ind] = sort(abs(Aty),'descend');
+                %     gamma2 = ind(1:min(length(gamma1),ceil(M/4)));
+                %     gamma3 = union(gamma1,gamma2);
+                % end
+                %
+                xh_t1 = 0*xh(end-N+1:end);
+                xh_t1(gamma3) = pinv(At(:,gamma3)'*At(:,gamma3)+2*tau*eye(length(gamma3)))*(At(:,gamma3)'*yt);
+                xh_t1(abs(xh_t1)<tau/sqrt(log(P*N))) = 0;
+                xh(end-N+1:end) = xh_t1;
         
         
         % Truncate small coefficients... ?

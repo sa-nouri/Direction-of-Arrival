@@ -24,13 +24,7 @@
 %   iter - number of homotopy iterations taken by the solver
 %   time - time taken by the solver
 %   error_table - error table with iteration record
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-%
-%-------------------------------------------+
-% Copyright (c) 2011.  Muhammad Salman Asif
-%-------------------------------------------+
+
 
 function out = wtBPDN_homotopy_function(A, y, in)
 

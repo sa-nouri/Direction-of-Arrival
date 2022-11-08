@@ -34,16 +34,6 @@
 %     gamma = out.gamma; % support of the solution
 %     iter = out.iter; % number of homotopy iterations used
 %     time = out.time; % computation time
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-%
-% Modified
-% May 2012: Added qr update feature
-%
-%-------------------------------------------+
-% Copyright (c) 2007.  Muhammad Salman Asif
-%-------------------------------------------+
 
 function out = BPDN_homotopy_function(A, y, in)
 

@@ -21,13 +21,6 @@
 % gamma_xk - Primal support at the solution
 % gamma_lambdak - Dual support at the solution
 
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-%
-%-------------------------------------------+
-% Copyright (c) 2007.  Muhammad Salman Asif 
-%-------------------------------------------+
-
 function [xk_1, lambdak_1, gamma_xk, gamma_lambdak, iter, th] = DS_homotopy_function(A, y, thresh, maxiter);
 
 N = size(A,2);

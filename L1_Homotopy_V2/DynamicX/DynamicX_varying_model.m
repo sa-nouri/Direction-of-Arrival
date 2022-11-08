@@ -1,50 +1,5 @@
 function sig_mod = DynamicX_varying_model(Name,n);
 
-% I have 'perturbed' the following function from WaveLab.
-%
-% MakeSignal -- Make artificial signal
-%  Usage
-%    sig = MakeSignal(Name,n)
-%  Inputs
-%    Name   string: 'HeaviSine', 'Bumps', 'Blocks',
-%            'Doppler', 'Ramp', 'Cusp', 'Sing', 'HiSine',
-%            'LoSine', 'LinChirp', 'TwoChirp', 'QuadChirp',
-%            'MishMash', 'WernerSorrows' (Heisenberg),
-%            'Leopold' (Kronecker), 'Piece-Regular' (Piece-Wise Smooth),
-%	     'Riemann','HypChirps','LinChirps', 'Chirps', 'Gabor'
-%	     'sineoneoverx','Cusp2','SmoothCusp','Gaussian'
-%	     'Piece-Polynomial' (Piece-Wise 3rd degree polynomial)
-%    n      desired signal length
-%  Outputs
-%    sig    1-d signal
-%
-%  References
-%    Various articles of D.L. Donoho and I.M. Johnstone
-
-% N = 2048;
-%
-% HeaviSine = MakeSignal('HeaviSine',N);
-% Blocks    = MakeSignal('Blocks',N);
-% Doppler   = MakeSignal('Doppler',N);
-% Ramp      = MakeSignal('Ramp',N);
-% Piece_Polynomial = MakeSignal('Piece-Polynomial',N);
-%
-% name = 1;
-% switch name
-%     case 1
-%         Name = 'HeaviSine';
-%     case 2
-%         Name = 'Blocks';
-%     case 3
-%         Name = 'Doppler';
-%     case 4
-%         Name = 'Ramp';
-%     case 5
-%         Name = 'Piece-Polynomial';
-%     otherwise
-%         disp('hey ... ');
-% end
-
 N = n;
 sig = MakeSignal(Name,N);
 
@@ -105,12 +60,3 @@ elseif strcmp(Name,'Piece-Polynomial'),
 end
 
 sig_mod = signal;
-
-% Originally made by David L. Donoho.
-% Function has been enhanced.
-
-%  Part of Wavelab Version 850
-%  Built Tue Jan  3 13:20:39 EST 2006
-%  This is Copyrighted Material
-%  For Copying permissions see COPYING.m
-%  Comments? e-mail wavelab@stat.stanford.edu

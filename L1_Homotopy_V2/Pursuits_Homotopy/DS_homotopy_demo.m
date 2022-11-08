@@ -2,17 +2,9 @@
 %
 % Solves the following Dantzig selector problem
 % min_x  ||x||_1  subject to  ||A'(Ax-y)||_\infty <= epsilon
-%
-% using Primal Dual Pursuit Homotopy method.
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-%
-%-------------------------------------------+
-% Copyright (c) 2008.  Muhammad Salman Asif 
-%-------------------------------------------+
 
-clear; close all; 
+
+clear; close all; clc;
 
 rseed = 0;
 rand('state',rseed);
@@ -417,10 +409,10 @@ legend('estimation', 'original');
 title('Estimated signal')
 
 % %%
-% x0 = A'*inv(A*A')*y;
-% % large scale
-% Afun = @(z) A*z;
-% Atfun = @(z) A'*z;
-% tic
-% xp = l1eq_pd(x0, Afun, Atfun, y, 1e-8, 1000, 1e-8, 1000);
-% toc
+x0 = A'*inv(A*A')*y;
+% large scale
+Afun = @(z) A*z;
+Atfun = @(z) A'*z;
+tic
+xp = l1eq_pd(x0, Afun, Atfun, y, 1e-8, 1000, 1e-8, 1000);
+toc

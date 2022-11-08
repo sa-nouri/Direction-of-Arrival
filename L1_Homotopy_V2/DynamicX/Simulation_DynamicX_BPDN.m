@@ -2,8 +2,7 @@
 % Compare warm start of GPSR and FPC with the homotopy update of BPDN.
 % Need GPSR and FPC packages in your matlab path to run this simulation. 
 
-clear 
-clear classes; close all; 
+close all; clear; clc;
 
 % % load fixed random states
 % load RandomStates

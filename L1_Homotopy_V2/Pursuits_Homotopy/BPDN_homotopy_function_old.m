@@ -14,16 +14,7 @@
 % gamma_x - support of the solution
 % total_iter - number of homotopy iterations taken by the solver
 % total_time - time taken by the solver
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-%
-% Modified 
-% May 2012: Added qr update feature
-% 
-%-------------------------------------------+
-% Copyright (c) 2007.  Muhammad Salman Asif
-%-------------------------------------------+
+
 
 function out = BPDN_homotopy_function(A, y, in)
 

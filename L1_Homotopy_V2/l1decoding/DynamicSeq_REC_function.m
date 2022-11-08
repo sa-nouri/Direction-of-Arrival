@@ -20,12 +20,7 @@
 % M: Number of old measurements
 % m_u: Number of new measurements
 % maxiter: Maximum allowed iterations
-%
-% Created by Salman Asif @ Georgia Tech
-% February 2009
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
+
 %-------------------------------------------+
 
 

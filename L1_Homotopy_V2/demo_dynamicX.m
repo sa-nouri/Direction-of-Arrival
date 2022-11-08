@@ -3,12 +3,7 @@
 % Solves the following BPDN problem
 % min_x  tau\|x\|_1 + 1/2*||y-Ax||_2^2
 % 
-% and updates the solution using updated measurements 
-% for a slighly modified x
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: February 2013
+% and updates the solution using updated measurements for a slighly modified x
 
 clear
 close all force

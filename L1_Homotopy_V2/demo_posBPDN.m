@@ -4,12 +4,9 @@
 % min_x  \tau \|x\|_1 + 1/2*||y-Ax||_2^2
 % with a positivity constraint... i.e., x >= 0
 %
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: February 2013
 
-clear
-close all force
+
+clear; close all; clc;
 
 %% Setup path
 mname = mfilename;

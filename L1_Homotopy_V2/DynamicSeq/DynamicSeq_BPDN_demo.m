@@ -1,12 +1,6 @@
 % BPDN update with sequential measurements homotopy comparison
-% Author: Salman Asif
-% Created: February 2009:
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
-%-------------------------------------------+
 
-clear; clc
+close all; clear all; clc;
 
 % load fixed random states
 load RandomStates
@@ -71,5 +65,3 @@ disp('Results for ');
 disp('old_homotopy , new_homotopy , update_homotopy')
 cputime_comparison = [t1 t2 th]
 Iter_comparison = [xp_iter xp2_iter xp_h_iter]
-
-% figure(2); plot(xp_h-xp2); shg

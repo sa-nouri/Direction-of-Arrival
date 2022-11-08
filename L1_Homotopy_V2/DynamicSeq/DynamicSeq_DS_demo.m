@@ -1,13 +1,6 @@
 % Dantzig selector sequential measurement update homotopy comparison
-% Author: Salman Asif
-% Created: February 2009:
-% Modified: June 2009
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
-%-------------------------------------------+
 
-clear; clc
+close all; clear all; clc;
 
 % % load fixed random states
 % load RandomStates

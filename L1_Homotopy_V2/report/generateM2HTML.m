@@ -1,7 +1,7 @@
 clear
 
 % Setup path
-m2html_path = 'C:\Users\Asif\Dropbox\Homotopy toolbox\m2html';
+m2html_path = 'Homotopy toolbox\m2html';
 addpath(m2html_path);
 
 mname = mfilename;

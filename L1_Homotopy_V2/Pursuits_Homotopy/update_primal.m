@@ -20,9 +20,6 @@
 % delta - primal step size
 % chk_x - 1  an element is removed from support of x
 %         0  a new element enters the support of lambda
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
 
 function [i_delta, out_x, delta, chk_x] = update_primal(gamma_x, gamma_lambda, z_x, x_k, del_x_vec, pk, dk, epsilon, out_lambda);
 
@@ -98,9 +95,6 @@ if ~isempty(gamma_x(wrong_sign))
     out_x = gamma_x(wrong_sign(1));
 end
 
-% If more than one primal constraints became active in previous iteration i.e.,
-% more than one elements wanted to enter the support and we added only one.
-% So here we need to check if those remaining elements are still active.
 i_delta_temp = gamma_lc(abs(pk(gamma_lc)+delta*dk(gamma_lc))-(epsilon-delta) >= 10*eps);
 if ~isempty(i_delta_temp)
     if ~isempty(out_lambda)

@@ -1,19 +1,4 @@
 function options = wspgSetParms(varargin)
-%SPGSETPARMS  Set options for SPGL1
-%
-%   options = spgSetParms('param1',val1,'param2',val2,...) creates an
-%   options structure in which the named parameters have the specified
-%   values.  Unspecified parameters are empty and their default
-%   values are used.
-%   
-%   spgSetParms with no input arguments and no output arguments
-%   displays all parameter names and their possible values.
-%
-%   options = spgSetParms (with no input arguments) creates an options
-%   structure where all the fields are empty.
-%
-%   spgSetParms.m
-%   $Id: spgSetParms.m 31 2011-01-07 02:16:23Z admin $
 
 % Print out possible values of properties.
 if nargin == 0 && nargout == 0

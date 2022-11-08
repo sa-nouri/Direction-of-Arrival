@@ -25,10 +25,6 @@
 %   gamma - support of the solution
 %   iter - number of homotopy iterations taken by the solver
 %   time - time taken by the solver
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-% Created: March 16, 2011
 
 function out = wtBPDN_Update_function_v2(A, y, in);
 

@@ -4,15 +4,9 @@
 % min_x  tau\|x\|_1 + 1/2*||y-Ax||_2^2
 % 
 % and updates the solution as new measurements w = Bx are received. 
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: August 2012
-%
-% Modified: May 2013 (using l1homotopy for update)
-% 
-clear
-close all force
+
+
+clear; close all; clc;
   
 %% Setup path
 mname = mfilename;

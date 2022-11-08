@@ -1,7 +1,6 @@
 % Simulation to test the performance of REC
 
-clear
-close all
+close all; clear; clc;
 
 % % load fixed random states
 % load RandomStates

@@ -14,19 +14,12 @@
 % if primal update direction and dual vector match at every step
 % (maybe opposite in sign, depending on the formulation) then
 % homotopy path taken by BPDN and Dantzig selector is exactly same.
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-%
-%-------------------------------------------+
-% Copyright (c) 2008.  Muhammad Salman Asif 
-%-------------------------------------------+
 
-clear; close all
+clear; close all; clc;
 
 rseed = 0;
-rand('state',rseed);
-randn('state',rseed);
+rand('state', rseed);
+randn('state', rseed);
 
 N = 512;   % signal length
 T = 50;    % sparsity level

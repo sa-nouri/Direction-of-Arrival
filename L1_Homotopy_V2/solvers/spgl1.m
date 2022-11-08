@@ -76,46 +76,8 @@ function [x,r,g,info] = spgl1( A, b, tau, sigma, x, options )
 %   opts = spgSetParms('optTol',1e-4);
 %   [x,r,g,info] = spgl1(A, b, 0, 1e-3, [], opts); % Find BP sol'n.
 %
-% AUTHORS
-% =======
-%  Ewout van den Berg (ewout78@cs.ubc.ca)
-%  Michael P. Friedlander (mpf@cs.ubc.ca)
-%    Scientific Computing Laboratory (SCL)
-%    University of British Columbia, Canada.
-%
-% BUGS
-% ====
-% Please send bug reports or comments to
-%            Michael P. Friedlander (mpf@cs.ubc.ca)
-%            Ewout van den Berg (ewout78@cs.ubc.ca)
-
-% 15 Apr 07: First version derived from spg.m.
-%            Michael P. Friedlander (mpf@cs.ubc.ca).
-%            Ewout van den Berg (ewout78@cs.ubc.ca).
-% 17 Apr 07: Added root-finding code.
-% 18 Apr 07: sigma was being compared to 1/2 r'r, rather than
-%            norm(r), as advertised.  Now immediately change sigma to
-%            (1/2)sigma^2, and changed log output accordingly.
-% 24 Apr 07: Added quadratic root-finding code as an option.
-% 24 Apr 07: Exit conditions need to guard against small ||r||
-%            (ie, a BP solution).  Added test1,test2,test3 below.
-% 15 May 07: Trigger to update tau is now based on relative difference
-%            in objective between consecutive iterations.
-% 15 Jul 07: Added code to allow a limited number of line-search
-%            errors. 
-% 23 Feb 08: Fixed bug in one-norm projection using weights. Thanks
-%            to Xiangrui Meng for reporting this bug.
-% 26 May 08: The simple call spgl1(A,b) now solves (BPDN) with sigma=0.
-    
-%   spgl1.m
-%   $Id: spgl1.m 1225 2009-01-30 20:36:31Z ewout78 $
-%
-%   ----------------------------------------------------------------------
+%   ----------------------------------
 %   This file is part of SPGL1 (Spectral Projected-Gradient for L1).
-%
-%   Copyright (C) 2007 Ewout van den Berg and Michael P. Friedlander,
-%   Department of Computer Science, University of British Columbia, Canada.
-%   All rights reserved. E-mail: <{ewout78,mpf}@cs.ubc.ca>.
 %
 %   SPGL1 is free software; you can redistribute it and/or modify it
 %   under the terms of the GNU Lesser General Public License as
@@ -126,11 +88,6 @@ function [x,r,g,info] = spgl1( A, b, tau, sigma, x, options )
 %   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 %   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General
 %   Public License for more details.
-%
-%   You should have received a copy of the GNU Lesser General Public
-%   License along with SPGL1; if not, write to the Free Software
-%   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
-%   USA
 %   ----------------------------------------------------------------------
 REVISION = '$Revision: 1017 $';
 DATE     = '$Date: 2008-06-16 22:43:07 -0700 (Mon, 16 Jun 2008) $';

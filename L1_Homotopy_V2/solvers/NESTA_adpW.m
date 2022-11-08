@@ -95,16 +95,7 @@ function [xk,niter,residuals,outputData,opts] =NESTA_adpW(A,At,b,muf,delta,opts)
 %               second column is the value of f_mu at every step
 %           outputData - a matrix, where each row r is the output
 %               from opts.outFcn, if supplied.
-%           opts - the structure containing the options that were used    
-%
-% Written by: Jerome Bobin, Caltech
-% Email: bobin@acm.caltech.edu
-% Created: February 2009
-% Modified (version 1.0): May 2009, Jerome Bobin and Stephen Becker, Caltech
-% Modified (version 1.1): Nov 2009, Stephen Becker, Caltech
-%
-% NESTA Version 1.1
-%   See also Core_Nesterov
+%           opts - the structure containing the options that were used
 
 
 if nargin < 6, opts = []; end

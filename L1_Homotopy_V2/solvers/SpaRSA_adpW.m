@@ -22,12 +22,6 @@ function [x,x_debias,objective,times,debias_start,mses,taus, numA, numAt]= ...
 % increased until we see a decreasein the original objective function over
 % this step.
 %
-% -----------------------------------------------------------------------
-% Copyright (2007): Mario Figueiredo, Robert Nowak, Stephen Wright
-%
-% GPSR is distributed under the terms
-% of the GNU General Public License 2.0.
-%
 % Permission to use, copy, modify, and distribute this software for
 % any purpose without fee is hereby granted, provided that this entire
 % notice is included in all copies of any software which is or includes
@@ -235,8 +229,6 @@ function [x,x_debias,objective,times,debias_start,mses,taus, numA, numAt]= ...
 %
 % W_new assigns the values to the weights
 % Termination criteria 2 and 3 modified to accomodate weighted L1 norm
-% 
-% Modified: June 2012 by Salman Asif @ Georgia Tech.
 %----------------------------------------------------------------
 
 % start the clock

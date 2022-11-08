@@ -4,46 +4,17 @@
 % min_x  \Sum \w_i |x_i| + 1/2*||y-Ax||_2^2
 %
 % while updating the weights w_i
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: June 16, 2011
-% 
-% Reference: 
-% "Fast and accurate algorithms for re-weighted L1 norm minimization," by 
-% M. Salman Asif and Justin Romberg
-% 
-% To reproduce experiments in the paper, use this scrip with 
 % 
 % rseed = 2012;
 % rand('state',rseed);
 % randn('state',rseed);
 %  
-% before running each simulation in 
-% script_simulation_wtBPDN
-%
-% The paper has results for Blocks and HeaviSine at SNR = 40
-% Run publish_results.m in the misc folder to generate pdfs presented int the paper.
-%
-% NOTE: While preparing the code for release, I realized that I used the average
-% of SER in db when I compiled results for publication, which is probably 
-% not the correct way to compute the average. 
-%
-% The average SER in the paper was computed as mean(-10log10(normalized error))
-% The standard way to compute average is -10log10(mean(normalized squared error))
-% where mean is over all the experiments. 
-%
-% To reproduce results in the paper, use publish_results.m
-% Otherwise use publish_results_new.m
-%
-% This changes the values of average SER for all the solvers. However, the 
-% comparison among the solvers remains almost same. 
 
 
 % function job_wtBPDN_WAVE(mT, sT, snr, rwt_mode, lam_mode)
 % mT = 1, sT = 2, snr = 3, rwt_mode = 5, lam_mode = 1;
 
-clear
+clear; close all; clc;
 
 EXP_LIST = [1 1 2 5 1; 1 1 3 5 1; 1 1 4 5 1; 1 2 2 5 1; 1 2 3 5 1; 1 2 4 5 1];
 maxNumCompThreads(1);

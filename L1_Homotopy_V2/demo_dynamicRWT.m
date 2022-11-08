@@ -12,13 +12,8 @@
 %       update weights according to the predicted solution
 %
 % We can also add a difference operator ||x-xh||_2^2 in the reconstruction
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: August 2012
 
-clear
-close all force
+clear; close all; clc;
  
 %% Setup path
 mname = mfilename;

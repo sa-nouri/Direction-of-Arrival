@@ -9,13 +9,8 @@
 %           streaming signal recovery using lapped orthogonal transform (LOT)
 %
 % We can also add any other regularization operator in the reconstruction
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: August 2012
 
-clear
-close all force
+clear; close all; clc;
 
 % Limit the number of computational threads (for profiling)
 % maxNumCompThreads(1);

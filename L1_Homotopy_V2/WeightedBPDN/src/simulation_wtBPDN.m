@@ -4,24 +4,8 @@
 % min_x  \Sum \w_i |x_i| + 1/2*||y-Ax||_2^2
 %
 % and dynamically update the weights w_i
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-% Created: April 16, 2011
 
-clear
-close all
-
-%% parfor setup
-% numCores = str2double(getenv('NUMBER_OF_PROCESSORS'));
-% mpSize = numCores-1;
-% if matlabpool('size') ~= mpSize
-%     if matlabpool('size')~=0
-%         matlabpool close;
-%     else
-%         matlabpool('open', mpSize);
-%     end
-% end
+clear; close all; clc;
 
 %% Setup path
 mname = mfilename;

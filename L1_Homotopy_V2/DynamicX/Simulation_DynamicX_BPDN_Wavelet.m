@@ -1,7 +1,4 @@
 % BPDN update with dynamic change in x
-% Author: Salman Asif
-% Created: November 2008
-% Modified: February 2009
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % In the submitted paper

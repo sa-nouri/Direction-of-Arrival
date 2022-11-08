@@ -3,12 +3,9 @@
 % Solves the following basis pursuit denoising (BPDN) problem: 
 % \min_x  \tau \|x\|_1 + \frac{1}{2}\|y-Ax\|_2^2 
 %
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: February 2013
 
-clear
-close all force
+
+clear; close all; clc;
 
 %% Setup path
 mname = mfilename;

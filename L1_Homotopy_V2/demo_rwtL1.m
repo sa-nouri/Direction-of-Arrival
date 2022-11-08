@@ -2,13 +2,9 @@
 %
 % Solves the following reweighted BPDN problem
 % min_x  \sum w_i |x_i| + 1/2*||y-Ax||_2^2
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: August 2012
 
-clear
-close all force
+
+clear; close all; clc;
  
 
 %% Setup path
@@ -153,22 +149,22 @@ for sim = 1:maxsim
         time_rwt = [time_rwt toc];
     end
         
-%     %% Check the solution using BPDN directly with l1homotopy
-%     in = []; x_old = x;
-%     in.W = W;
-%     in.delx_mode = delx_mode;
-%     in.debias = 0;
-%     in.verbose = 0;
-%     in.plots = 0;
-%     in.record = 1;
-%     in.err_fun = err_fun;
-%     tic
-%     out = l1homotopy(A,y,in);
-%     xh = out.x_out;
-%     iter_bpdn = out.iter;
-%     time_bpdn = toc;
-%     gamma_bpdn = out.gamma;
-%     err_bpdn = out.error_table; 
+    %% Check the solution using BPDN directly with l1homotopy
+    in = []; x_old = x;
+    in.W = W;
+    in.delx_mode = delx_mode;
+    in.debias = 0;
+    in.verbose = 0;
+    in.plots = 0;
+    in.record = 1;
+    in.err_fun = err_fun;
+    tic
+    out = l1homotopy(A,y,in);
+    xh = out.x_out;
+    iter_bpdn = out.iter;
+    time_bpdn = toc;
+    gamma_bpdn = out.gamma;
+    err_bpdn = out.error_table; 
     
     %%
     SIM_stack{sim} = [sim, tau, ...

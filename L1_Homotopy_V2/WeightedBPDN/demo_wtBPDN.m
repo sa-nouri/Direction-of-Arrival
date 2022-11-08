@@ -4,17 +4,12 @@
 % min_x  \Sum \w_i |x_i| + 1/2*||y-Ax||_2^2
 %
 % and dynamically update the weights w_i
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: March 16, 2011
 
 % Comparison between IRW-H and ARW-H, 
 % INIT: solution of standard BPDN problem (un-weighted L1)
 % also included OMP, oracle-support LS, and oracle-weighted L1 
 
-clear
-close all force
+clear; close all; clc;
 
 %% parfor setup
 % numCores = str2double(getenv('NUMBER_OF_PROCESSORS'));

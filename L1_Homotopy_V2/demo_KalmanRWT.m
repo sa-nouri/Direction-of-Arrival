@@ -18,13 +18,8 @@
 %   	track a signal as y, A, and/or x change... 
 %       predict an estimate of the solution and
 %       update weights according to the predicted solution
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: November 2012
 
-clear
-close all force
+clear; close all; clc;
 
 % Limit the number of computational threads (for profiling)
 maxNumCompThreads(1);

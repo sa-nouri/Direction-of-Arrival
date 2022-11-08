@@ -1,14 +1,6 @@
 % Test file for Dantzig selector (DS) update with dynamic change in x
 
-% Author: Muhammad Salman Asif @ Georgia Tech
-% E-mail: sasif@ece.gatech.edu
-% Created: February 2009
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
-%-------------------------------------------+
-
-clear; clc;
+close all; clear all; clc;
 
 addpath('../Pursuits_Homotopy')
 
@@ -93,5 +85,3 @@ disp(' ');
 disp('old_homotopy , new_homotopy , update_homotopy')
 cputime_comparison = [t1 t2 th]
 iter_comparison = [xp_iter xp2_iter xp_h_iter]
-
-% figure(2); plot(xp_h-xp2); shg

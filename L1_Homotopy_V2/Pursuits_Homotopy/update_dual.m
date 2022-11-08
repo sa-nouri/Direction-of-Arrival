@@ -20,9 +20,6 @@
 % theta - dual step size 
 % chk_lambda - 1  an element is removed from support of lambda
 %              0  a new element enters the support of x
-% 
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
 
 function [i_theta, out_lambda, theta, chk_lambda] = update_dual(gamma_x, gamma_lambda, z_lambda, lambda_k, del_lambda_p, ak, bk, new_lambda, out_x);
 

@@ -20,14 +20,6 @@
 % tau: threshold parameter. 
 
 % DS update with dynamic change in x
-% Author: Muhammad Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-% Created: February 2009
-% Modified; June 2009
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
-%-------------------------------------------+
 
 function [xp_h, lambda_h, gamma_xh, gamma_lh, iter, th] = DynamicX_DS_function(A, Q_glgx, R_glgx, y, yt, xp, lame, gamma_x, gamma_lambda, pk, ak, tau, maxiter)
 

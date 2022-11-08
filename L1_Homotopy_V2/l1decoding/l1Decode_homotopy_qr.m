@@ -6,22 +6,10 @@
 %
 % In this script, we start the decoding with $m=n$ measurements and
 % sequentially add m_u new measurements and solve using homotopy.
-%
-% Created by Salman Asif @ Georgia Tech
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
+
 %-------------------------------------------+
 
-
-% Modification history :
-% 09/29/08
-% 10/02/08 : multiple measurements
-% 02/15/09 : fast update of inverse matrix
-% 06/21/09 : Solve using qr factorization
-
-close all
-clear
+close all; clear; clc;
 
 % % load fixed random states
 % load RandomStates

@@ -9,10 +9,6 @@
 %   	streaming signal recovery from overlapping measurements
 %
 % We can also add any other regularization operator in the reconstruction
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: August 2012
 
 clear
 close all % force
@@ -310,22 +306,22 @@ for sim = 1:maxsim
     xh = xh_streamingRWT;
     
     % Check the solution using BPDN directly with l1homotopy
-    %     in = []; x_old = x;
-    %     in.W = W;
-    %     in.delx_mode = delx_mode;
-    %     in.debias = 0;
-    %     in.verbose = 0;
-    %     in.maxiter = maxiter;
-    %     in.plots = 0;
-    %     in.record = 1;
-    %     in.err_fun = err_fun;
-    %     tic
-    %     out = l1homotopy(A,y,in);
-    %     xh = out.x_out;
-    %     iter_bpdn = out.iter;
-    %     time_bpdn = toc;
-    %     gamma_bpdn = out.gamma;
-    %     err_bpdn = out.error_table;
+        in = []; x_old = x;
+        in.W = W;
+        in.delx_mode = delx_mode;
+        in.debias = 0;
+        in.verbose = 0;
+        in.maxiter = maxiter;
+        in.plots = 0;
+        in.record = 1;
+        in.err_fun = err_fun;
+        tic
+        out = l1homotopy(A,y,in);
+        xh = out.x_out;
+        iter_bpdn = out.iter;
+        time_bpdn = toc;
+        gamma_bpdn = out.gamma;
+        err_bpdn = out.error_table;
     
     %% SpaRSA
     x_sparsa = xh_old; W_sparsa = W/tau;

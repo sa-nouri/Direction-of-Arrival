@@ -1,16 +1,6 @@
 % Test file for LASSO (BPDN) update with dynamic change in x
 
-% Author: Muhammad Salman Asif @ Georgia Tech
-% E-mail: sasif@ece.gatech.edu
-% Created: November 2008
-% Modified: February 2009
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
-%-------------------------------------------+
-
-
-clear
+close all; clear all; clc;
 
 % % load fixed random states
 % load RandomStates
@@ -250,6 +240,7 @@ while ~done
 
     %print(gcf,'-dbmp','-r200',['BPDNPath_',num2str(iter)])
 end
+
 figure(2);
 subplot(2,1,1);
 hold off;

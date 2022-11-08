@@ -20,14 +20,7 @@
 % chk_e0: 0 or 1: This selects if we want to take U = (A'A+b'b) (1) or (A'A+e0*b'b) (0)...!
 % In simulation U = (A'A+b'b) works better
 
-% BPDN solution update with dynamic measurements 
-% Author: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-% Created: February 2008
-%
-%-------------------------------------------+
-% Copyright (c) 2008.  Muhammad Salman Asif 
-%-------------------------------------------+
+% BPDN solution update with dynamic measurements
 
 function [xp_h, gamma_xh, iter, th] = DynamicSeq_BPDN_function(A, b, AtAgx, iAtAgx, y, w, xp, gamma_x, pk, tau, chk_e0, maxiter)
 

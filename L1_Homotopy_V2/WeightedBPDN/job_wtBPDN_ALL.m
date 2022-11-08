@@ -4,15 +4,6 @@
 % min_x  \Sum \w_i |x_i| + 1/2*||y-Ax||_2^2
 %
 % while updating the weights w_i
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: June 16, 2011
-% 
-% Reference: 
-% "Fast and accurate algorithms for re-weighted L1 norm minimization," by 
-% M. Salman Asif and Justin Romberg
-
 % function job_wtBPDN_ALL(mT, sT, snr, rwt_mode, lam_mode)
 % mT = 1, sT = 1, snr = 2, rwt_mode = 5, lam_mode = 1;
 

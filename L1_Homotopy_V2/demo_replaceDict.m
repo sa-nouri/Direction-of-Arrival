@@ -9,13 +9,8 @@
 % Applications:
 %   	in dictionary learning where A is iteratively updated
 %       in tracking where y, A, and x, are updated..
-% 
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: August 2012
 
-clear
-close all force
+clear; close all; clc
  
 % Limit the number of computational threads (for profiling)
 % maxNumCompThreads(1);

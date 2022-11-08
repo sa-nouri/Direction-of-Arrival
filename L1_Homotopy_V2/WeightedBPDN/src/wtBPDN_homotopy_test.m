@@ -2,13 +2,6 @@
 %
 % Solves the following basis pursuit denoising (BPDN) problem
 % min_x  \Sum \e_i |x_i| + 1/2*||y-Ax||_2^2
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-%
-%-------------------------------------------+
-% Copyright (c) 2010.  Muhammad Salman Asif 
-%-------------------------------------------+
 
 clear
 clc

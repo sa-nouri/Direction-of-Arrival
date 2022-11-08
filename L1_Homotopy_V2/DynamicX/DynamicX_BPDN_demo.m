@@ -1,12 +1,6 @@
 % BPDN/LASSO update homotopy comparison
-% Author: Muhammad Salman Asif
-% Created: February 2009:
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
-%-------------------------------------------+
 
-clear; clc;
+close all; clear; clc;
 
 % % load fixed random states
 % load RandomStates
@@ -86,5 +80,3 @@ pk = A'*(A*xp-y);
 % [old_homotopy new_homotopy update_homotopy]
 Cputime_comparison = [t1 t2 th]
 Iteration_comparison = [xp_iter xp2_iter xp_h_iter]
-
-% figure(2); plot(xp_h-xp2); shg

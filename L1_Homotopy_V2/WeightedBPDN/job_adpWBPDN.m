@@ -5,15 +5,6 @@
 % min_x  \Sum \w_i |x_i| + 1/2*||y-Ax||_2^2
 %
 % while adaptively selecting the weights w_i
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-% Created: June 16, 2011
-%
-% Reference: 
-% "Fast and accurate algorithms for re-weighted L1 norm minimization," by 
-% M. Salman Asif and Justin Romberg
-% 
 % To reproduce experiments in the paper, use this scrip with 
 % 
 % rseed = 2012;
@@ -23,8 +14,7 @@
 % before running each simulation in 
 % script_simulation_adpWBPDN     
 
-clear
-% close all force
+clear; close all; clc;
 
 %% parfor setup
 % numCores = str2double(getenv('NUMBER_OF_PROCESSORS'));

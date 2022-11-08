@@ -1,12 +1,10 @@
 % Test out l1 decoding with homotopy update scheme
-%
-% Created by Salman Asif @ Georgia Tech
 
-close all
-clear
 
-randn('state',0);
-rand('state',0);
+close all; clear; clc;
+
+randn('state', 0);
+rand('state', 0);
 
 % source length
 N = 128;

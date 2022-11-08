@@ -2,13 +2,7 @@
 %
 % Solve the following basis pursuit denoising (BPDN) problem
 % min_x  \Sum \w_i |x_i| + 1/2*||y-Ax||_2^2
-%
-% Initialize with adaptive weighted BPDN
-% and dynamically update the weights w_i
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@ece.gatech.edu
-% Created: April 16, 2011
+
 
 function out = script_rwtBPDN_adaptive(in)
 

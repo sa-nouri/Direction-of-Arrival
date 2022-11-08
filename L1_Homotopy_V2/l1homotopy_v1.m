@@ -66,13 +66,6 @@
 %   time - time taken by the solver
 %   error_table - error table with iteration record
 %   iAtA on Gamma, or QR/Cholesky factors
-%
-% Written by: Salman Asif, Georgia Tech
-% Email: sasif@gatech.edu
-%
-%-------------------------------------------+
-% Copyright (c) 2012.  M. Salman Asif
-%-------------------------------------------+
 
 function out = l1homotopy_v1(A, y, opts)
 

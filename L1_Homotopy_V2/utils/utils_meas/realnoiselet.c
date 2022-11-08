@@ -10,12 +10,6 @@
    2) This is a real-valued variation of "dragon" noiselets.
    3) This is symmetric and orthogonal. To invert, apply again and
       divide by vector length.
-
-   Written by: Justin Romberg, Georgia Tech
-               Peter Stobbe, Caltech
-   Email: jrom@ece.gatech.edu, stobbe@acm.caltech.edu
-   Created: October 2006
-   Last Modified: December 2006
 */
 
 #include <stdlib.h>

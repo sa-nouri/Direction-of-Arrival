@@ -2,9 +2,7 @@
 % Comparison with FPC_AS and simple BPDN homotopy
 % Need FPC package and accompanying problems to test parts of this file.
 
-clear
-% close all
-% clear classes;
+close all; clear all; clc;
 
 % % load fixed random states
 % load RandomStates
@@ -65,10 +63,10 @@ y = A*x + e;
 % regularization parameter
 tau = .01*small_mag/large_mag*max(abs(A'*y)); 
 %tau = tau_table; 
-% if sigma>0
-%     tau = sigma * sqrt(log(n)*2); % BPDN
-%     %tau = max(abs(A'*(A*x-y))); % ideal ???
-% end
+if sigma>0
+    tau = sigma * sqrt(log(n)*2); % BPDN
+    %tau = max(abs(A'*(A*x-y))); % ideal ???
+end
 
 % Homotopy method
 tic
@@ -81,6 +79,7 @@ tolA_h = tau*sum(abs(xp))+1/2*(norm(A*xp-y))^2;
 % The performance of FPC is best for the small values of these parameters 
 % and that increases the iteration count.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 pdg_scale = 1e-3; 
 opts.gtol = 1e-8;
 

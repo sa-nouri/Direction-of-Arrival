@@ -2,9 +2,7 @@
 % Compare warm start of GPSR and FPC with the homotopy update of BPDN.
 % Need GPSR and FPC packages in your matlab path to run this simulation. 
 
-clear
-close all
-clear classes;
+clear all; close all; clc;
 
 sim_runs = 20; % Use a large number of simulation run to compare the performance
 tau_table = [.5 .1 .05 .01];

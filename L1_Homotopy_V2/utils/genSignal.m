@@ -27,16 +27,6 @@ function [x varargout] = genSignal(N,in)
 %
 %   Images: 
 %
-%   References
-%    Various articles of D.L. Donoho and I.M. Johnstone
-%
-% Originally made by David L. Donoho.
-% Function has been enhanced.
-%
-%  Part of Wavelab Version 850
-%  Built Tue Jan  3 13:20:39 EST 2006
-%  This is Copyrighted Material
-%  For Copying permissions see COPYING.m
 
 t = (1:N)./N;
 if isfield(in,'randgen'); randgen = in.randgen; else randgen = 0; end

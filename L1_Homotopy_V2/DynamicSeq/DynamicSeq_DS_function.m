@@ -22,13 +22,6 @@
 
 % Dantzig selector solution dynamica update with sequential measurements
 % Rank one update is based on qr factorization.
-
-% Author: Salman Asif, Georgia Tech.
-% Email: sasif@ece.gatech.edu
-% Created: June 2009
-%
-%-------------------------------------------+
-% Copyright (c) 2009.  Muhammad Salman Asif 
 %-------------------------------------------+
 
 function [xp_h, lambda_h, gamma_xh, gamma_lh, iter, th] = DynamicSeq_DS_function(A, b, Q_glgx, R_glgx, y, w, xp, lame, gamma_x, gamma_lambda, pk, ak, tau, maxiter)

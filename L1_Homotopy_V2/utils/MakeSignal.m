@@ -15,9 +15,7 @@ function sig = MakeSignal(Name,n)
 %  Outputs
 %    sig    1-d signal
 %
-%  References
-%    Various articles of D.L. Donoho and I.M. Johnstone
-%
+
    if nargin > 1,
 	t = (1:n) ./n;
    end

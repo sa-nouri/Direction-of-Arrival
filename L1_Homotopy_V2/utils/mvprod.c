@@ -2,8 +2,6 @@
  * Usage: lhs = mvprod(A,rhs,Gamma,flag);
  * y = A_Gamma * x_Gamma
  * x_Gamma = A_Gamma' * y
- Matrix vector multiplication using indices of the matrix.
- Written by: Salman Asif, Georgia Tech
 */
 
 #include <stdlib.h>
