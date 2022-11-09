@@ -1,8 +1,6 @@
 % Calcluate Direction of Arrival with ESPRIT
-% Calcluate Direction of Arrival with ESPRIT
 
-
-function Esprit_Doas = Esprit(R,d,Num_Source)
+function Esprit_Doas = Esprit(R, d, Num_Source)
     
     [Betha,lambda] = eig(R);
     [~,lambda_index] = sort(diag(lambda),1,'descend');
