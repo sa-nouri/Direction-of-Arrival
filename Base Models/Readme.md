@@ -27,3 +27,12 @@ The ESPRIT exploits the rotational invariance property of two identical subarray
 
 - [Linear](linear.m): The implementation of Linear prediction model algorithm for the direction of arrival estimation task.
 The linear prediction-based estimation procedure is commonly used in time series analysis for all pole modeling data. It has also been successfully used in array processing. In this case, one of the sensor outputs is predicted as a linear combination of the remaining sensor outputs at any instant. The predictor coefficients are selected to minimize the mean square error.
+
+- [Demo](./Demo/): Contains demo files about implementations of the Base Models' algorithms.
+-- Angle.m: Comparison of beamforming and capon method.
+-- beamformer_capon_.m: Another version of beamforming and capon implementation
+-- corr_beam_capon.m: Examining the beamforming and capon doa estimation methods with different implementation
+-- flower.m: Implementation of estimating covariance matrix
+-- music.m: Demo implementation for MUSIC algorithm
+-- rmse_beam-capon.m: Computing RMSE for comparing capon and beamforming methods
+-- shape.m: Estimating the direction of arrival capon and beamforming
