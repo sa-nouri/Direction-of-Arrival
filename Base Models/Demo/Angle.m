@@ -1,15 +1,15 @@
 %%
-clc ; clear ; close all
+clc ; clear ; close all;
 
 %% Angle Estimation 
 
-Num_source = 4 ;
+Num_source = 4;
 Num_sample = 1e3; 
 SNR = [1e4 1e4 1e4 1e4 ];
 
 M = 10 ;  % Num of Antennas 
-d =(0:M-1) ; 
-theta = [23 ; 40 ; 60 ; 90 ] ;%rand(Num_source,1) .* 180 / pi ;
+d = (0:M-1) ; 
+theta = [23 ; 40 ; 60 ; 90 ] ;  %rand(Num_source,1) .* 180 / pi ;
 
 noise  = (randn(M,Num_sample) + ( 1i * randn(M,Num_sample))) * (sqrt(1/2));
 signal = (randn(Num_source,Num_sample) + ( 1i * randn(Num_source,Num_sample))) .* (sqrt(SNR(:,1)/2));
