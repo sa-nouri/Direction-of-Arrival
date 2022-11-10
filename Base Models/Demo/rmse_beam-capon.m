@@ -36,11 +36,11 @@ end
 rmse_beam = sqrt(sum((error_beam.^2))); 
 rmse_capon = sqrt(sum(error_capon.^2));
 
-% plot((rmse_beam),'b');
-% grid on ;
-% hold on ;
-% plot((rmse_capon),'r');
-% title(' RMSE  ' ) ;
+plot((rmse_beam),'b');
+grid on ;
+hold on ;
+plot((rmse_capon),'r');
+title(' RMSE  ' ) ;
 
 %%
 
