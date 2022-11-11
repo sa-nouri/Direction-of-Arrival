@@ -1,7 +1,8 @@
 ## Linear Sparse Methods
 
 Many imaging and compressed sensing applications seek sparse solutions to under-determined least-squares problems.
-This directory contains sparse array optimization algorithms for direction of arrival estimation in ULA. The following lines give particular information about each matlab file.
+This directory contains sparse array optimization algorithms for direction of arrival estimation in ULA.
+The following lines give particular information about each matlab file.
 
 - [BPDN](BPDN.m): The from scratch implementation of Basis Pursuit Denoise algorithm for sparse array antenna recovery.
 It is similar to Lasso implementation which is developed by the statistics community. However, the BPDN was developed by the
@@ -29,3 +30,5 @@ noise subspace and the signal subspace. By searching the sparsest coefficients o
     2) l1-norm --- Multiple snapshots
     3) l2-1 norm optimization for multiple snapshots
     4) Beamformer - Capon - Music - l1-SVD
+
+- [StoULA](StoULA.m): It contains some Gridless methods impelementation for estimating direction of arrival.
