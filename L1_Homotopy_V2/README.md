@@ -1,6 +1,6 @@
 ## L1 Homotopy Package
 
-l1homotopy is a highly versatile homotopy program that can solve a variety of L1-norm minimization problems using a warm start.
+l1homotopy is a highly versatile homotopy program that can solve a variety of L1-norm minimization problems using a warm start. Needless to say, some of these implementations are based on Salman Asif's implementations, which are available on [L1-homotopy](https://github.com/sasif/L1-homotopy.git).
 
 l1homotopy.m is the main function that solves the following homotopy program:
 
