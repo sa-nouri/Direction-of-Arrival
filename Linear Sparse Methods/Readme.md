@@ -1,34 +1,27 @@
 ## Linear Sparse Methods
 
-Many imaging and compressed sensing applications seek sparse solutions to under-determined least-squares problems.
-This directory contains sparse array optimization algorithms for direction of arrival estimation in ULA.
-The following lines give particular information about each matlab file.
+In numerous imaging and compressed sensing applications, the pursuit of sparse solutions to under-determined least-squares problems is paramount. This directory houses a collection of sparse array optimization algorithms designed for direction of arrival estimation in Uniform Linear Array (ULA) configurations. Below, you'll find detailed information about each MATLAB file:
 
-- [BPDN](BPDN.m): The from scratch implementation of Basis Pursuit Denoise algorithm for sparse array antenna recovery.
-It is similar to Lasso implementation which is developed by the statistics community. However, the BPDN was developed by the
-signal processing community. The Lasso and Basis Pursuit Denoising (BPDN) approaches of bounding the 1-norm of the solution have led to several computational algorithms.
+- [BPDN (BPDN.m)]: This file presents a ground-up implementation of the Basis Pursuit Denoise (BPDN) algorithm for recovering sparse array antenna solutions. BPDN is akin to the Lasso implementation developed by the statistics community. However, it was specifically developed by the signal processing community. Both Lasso and Basis Pursuit Denoising (BPDN) approaches, which bound the 1-norm of the solution, have paved the way for several computational algorithms.
 
-- [Source_localization_V1](Source_localization_V1.m): It contains the MATLAb version implementation for matrix recovery. Then, the l1-norm objective function, iterated weighted l1-norm objective function, and rank reduction method are implemented via CVX.
+- [Source Localization Version 1 (Source_localization_V1.m)]: This file contains MATLAB implementations for matrix recovery. It includes the l1-norm objective function, iterated weighted l1-norm objective function, and rank reduction method, all implemented via CVX.
 
-- [SRACV](sracv.m): The implementation of the Sparse Reconstruction of Array Covariance Vector (SRACV) which is based on l1-norm optimization problem. Based on the sparse representation of array covariance vectors, a weighted L1-norm minimization is applied to the data model, in which the weighted vector can be obtained by taking advantage of the orthogonality between the
-noise subspace and the signal subspace. By searching the sparsest coefficients of the array covariance vectors simultaneously, DOAs can be effectively estimated.
+- [SRACV (sracv.m)]: Here, you'll find the implementation of the Sparse Reconstruction of Array Covariance Vector (SRACV) algorithm, based on l1-norm optimization principles. Leveraging the sparse representation of array covariance vectors, this approach employs weighted L1-norm minimization within the data model. The weighted vector is obtained by capitalizing on the orthogonality between the noise subspace and the signal subspace. By simultaneously identifying the sparsest coefficients of the array covariance vectors, it effectively estimates directions of arrival (DOAs).
 
-- [SRACV_MUSIC_CMP](sracv_music_cmp.m): It is the comparison of MUSIC and L1-SRACV algorithms with the RMSE (Root Mean Square Error) performance metric.
+- [SRACV_MUSIC_CMP (sracv_music_cmp.m)]: This file offers a comparison between the MUSIC and L1-SRACV algorithms using the Root Mean Square Error (RMSE) performance metric.
 
-- [mySVD](mySVD.m): It is the accelerated singular value decomposition. Based on the size of X, mySVD computes the eigvectors of X*X^T or X^T*X first, and then convert them to the eigenvectors of the other.
+- [mySVD (mySVD.m)]: This accelerated singular value decomposition (SVD) method adapts its computations based on the size of the input matrix X. It computes the eigenvectors of either X*X^T or X^T*X first and then converts them into eigenvectors of the other matrix.
 
-- [SV](sv.m): It is based on the singular value decomposition (SVD). Then, its outputs are used for creating a temporary matrix in recovering signal.
+- [SV (sv.m)]: This implementation is based on singular value decomposition (SVD). Its outputs contribute to the creation of a temporary matrix used in signal recovery.
 
-- [L1-SVD](l1_svd.m): This is the l2,1 norm optimization for multiple snapshots for estimating dirction of arrival. It uses SV implementation in its own estimation.
+- [L1-SVD (l1_svd.m)]: This algorithm optimizes the l2,1 norm for multiple snapshots to estimate the direction of arrival. It utilizes the SV implementation within its estimation process.
 
-- [Norm_lij](norm_lij.m): It is a specific version of norms to compute the norm of a matrix with i, j as its parameters.
+- [Norm_lij (norm_lij.m)]: This file provides specific versions of norm calculations to compute the norm of a matrix with parameters i and j.
 
-- [RMSE](rmse.m): It is our used performance metric, which stands for Root Mean Square Error.
+- [RMSE (rmse.m)]: RMSE stands for Root Mean Square Error and serves as the performance metric used in our evaluations.
 
-- [SLSA](SLSA.m): This implementation contaitns the following algorithms computation and comparison with the others:
-    1) Single Sample Source locarization with BPDN in CVX
-    2) l1-norm --- Multiple snapshots
-    3) l2-1 norm optimization for multiple snapshots
-    4) Beamformer - Capon - Music - l1-SVD
+- [SLSA (SLSA.m)]: This implementation encompasses the computation and comparison of various algorithms, including Single Sample Source Localization with BPDN in CVX, l1-norm for multiple snapshots, l2-1 norm optimization for multiple snapshots, Beamformer, Capon, Music, and l1-SVD.
 
-- [StoULA](StoULA.m): It contains some Gridless methods impelementation for estimating direction of arrival.
+- [StoULA (StoULA.m)]: This file contains implementations of Gridless methods for estimating the direction of arrival in sparse configurations.
+
+These resources provide an in-depth exploration of linear sparse methods for direction of arrival estimation in ULAs. If you have any questions, require further clarification, or wish to discuss any aspects of these methods, please feel free to reach out.
