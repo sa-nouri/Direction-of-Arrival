@@ -1,18 +1,21 @@
-# Direction of Arrival
+# Direction of Arrival Estimation
 
-Direction-of-arrival (DOA) estimation refers to the process of retrieving the direction information of several electromagnetic waves/sources from the outputs of a number of receiving antennas that form a sensor array. DOA estimation is a major problem in array signal processing and has wide applications in radar, sonar, wireless communications, etc. With the development of sparse representation and compressed sensing, the last decade has witnessed a tremendous advance in this research topic.
+Direction-of-arrival (DOA) estimation involves determining the direction of arrival of electromagnetic waves or sources using the outputs of multiple receiving antennas, which together form a sensor array. DOA estimation is a critical problem in array signal processing and finds extensive applications in fields such as radar, sonar, and wireless communications. Over the past decade, significant advancements in this research area have been driven by developments in sparse representation and compressed sensing techniques.
 
-- In signal processing, DOA denotes the direction from which usually a propagating wave arrives at a point, where usually a set of sensors are located.
+## Overview
 
-- Antenna arrays are used in many digital signal processing applications due to their ability to locate signal sources. DOA estimation is a key task of array signal processing.
+In signal processing, DOA denotes the direction from which a propagating wave typically arrives at a specific point, where a set of sensors is usually located.
 
-### Particular Information about the files
+Antenna arrays are commonly employed in various digital signal processing applications due to their capability to locate signal sources accurately. DOA estimation represents a fundamental task in array signal processing.
 
-- [Base Models](./Base%20Models/): It is the implementation of DOA estimation methods for uniform linear array antenna (ULA). Further information is available on [Base Models' Readme](./Base%20Models/Readme.md).
+## Repository Contents
 
-- [Linear Sparse Methods](./Linear%20Sparse%20Methods/): It is about sparse array optimization algorithms for direction of arrival estimation in ULA. Additional information is available on [Linear Sparse Methods' Readme](./Linear%20Sparse%20Methods/Readme.md).
+- [Base Models](./Base%20Models/): This directory contains the implementation of DOA estimation methods for a uniform linear array antenna (ULA). For more details, please refer to the [Base Models' Readme](./Base%20Models/Readme.md).
 
-- [Circular Array Antenna](./Circular%20Array%20Antenna/): It contains conventional and sparse array optimization algorithms for direction of arrival estimation in UCA. Additional information is available on [Circular Array Antenna's Readme](./Circular%20Array%20Antenna/Readme.md).
+- [Linear Sparse Methods](./Linear%20Sparse%20Methods/): Here, you will find sparse array optimization algorithms for direction of arrival estimation in ULA configurations. Additional information can be found in the [Linear Sparse Methods' Readme](./Linear%20Sparse%20Methods/Readme.md).
 
-- [L1_Homotopy_V2](./L1_Homotopy_V2/): l1-homotopy is a highly versatile homotopy program that can solve a variety of L1-norm minimization problems using a warm start.  Additional information is available on [L1-Homotopy's Readme](./L1_Homotopy_V2/README.md).
+- [Circular Array Antenna](./Circular%20Array%20Antenna/): This section encompasses both conventional and sparse array optimization algorithms designed for direction of arrival estimation in circular array (UCA) setups. Further details are available in the [Circular Array Antenna's Readme](./Circular%20Array%20Antenna/Readme.md).
 
+- [L1_Homotopy_V2](./L1_Homotopy_V2/): The L1-homotopy repository contains a highly versatile homotopy program capable of solving various L1-norm minimization problems using a warm start approach. For in-depth information, please visit the [L1-Homotopy's Readme](./L1_Homotopy_V2/README.md).
+
+This repository provides valuable resources and implementations related to DOA estimation techniques and array signal processing. We encourage you to explore the individual sections to gain insights into these methods and their applications. If you have any questions or require further assistance, please don't hesitate to reach out.
