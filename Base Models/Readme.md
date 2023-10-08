@@ -1,38 +1,52 @@
-## Base Models
+## Base Models for Direction of Arrival Estimation
 
-This file contains primary algorithms for direction of arrival estimation in uniform linear array antenna (ULA). The following lines give particular information about each file.
+This section contains fundamental algorithms for direction of arrival (DOA) estimation using uniform linear array antennas (ULAs). Each algorithm is briefly described below:
 
-- [Covariance Matrix](Covariance.m): The implementation of covariance matrix for the output signal of ULAs.
-The covariance matrix is the random process's second-order statistic, measured at the array sensors. It contains information about the sources in space (number, strength, direction) and can be used for source detection and separation. The number of independent spatial signals at the array's input and the R's rank is the same. It is worth saying algorithms based on covariance matrix inversion/decomposition suffer from source correlation. They can't be separated if the sources are highly correlated (have identical waveforms or too close a direction). And also, the system performance degrades in the highly correlated scenario.
+### [Covariance Matrix](Covariance.m)
+- **Description**: Implements the covariance matrix for the output signal of ULAs.
+- **Details**: The covariance matrix represents the second-order statistics of the random process, measured at the array sensors. It contains vital information about the sources in space, including their number, strength, and direction. Covariance matrices are often used for source detection and separation. However, algorithms based on covariance matrix inversion/decomposition can be limited by source correlation. They struggle to separate highly correlated sources or sources with nearly identical waveforms.
 
-- [Beamformere](Beamformer.m): The implementation of Beamformer method for the direction of arrival estimation task.
-This estimator produces a single peak in the actual direction of arrival in a single target scene by measuring the power when directed in that direction. However, contributions from one source will bias the estimator output in other directions of arrival, even in an uncorrelated multi-source picture. As a result, the peaks move away from their actual arrival directions and toward one another. The peaks combine into a single peak, reducing resolution if both sources are situated inside the main beam.
+### [Beamformer](Beamformer.m)
+- **Description**: Implements the Beamformer method for DOA estimation.
+- **Details**: The Beamformer produces a single peak in the direction of the actual arrival of a single target source. However, in the presence of multiple sources, contributions from one source can bias the estimator's output in other directions, even if the sources are uncorrelated. This can lead to a reduction in resolution, with peaks moving away from their true arrival directions and potentially merging.
 
-- [Capon](Capon.m): The implementation of Capon method for the direction of arrival estimation task.
-Beamforming is a spatial filtering technique used in signal processing. It is frequently utilized in sensor arrays to determine the signal's angle of arrival when noise is present. Capon Spectrum Beamforming is a minimum-variance, distortionless response technique. This means that it optimizes the beam's movement-to-noise ratio without affecting the signal's gain or phase.
+### [Capon](Capon.m)
+- **Description**: Implements the Capon method for DOA estimation.
+- **Details**: Capon Spectrum Beamforming is a spatial filtering technique used in signal processing, particularly in sensor arrays. It is employed to determine the angle of arrival of a signal when noise is present. The Capon method aims to optimize the beam's signal-to-noise ratio while preserving the signal's gain and phase.
 
-- [MVDR](MVDR.m): The implementation of the Minimum Variance Distortionless Response (MVDR) for estimating direction of arrival.
-The MVDR Beamformer is a data adaptive beamforming method whose objective is to reduce the output variance. The variance of the recorded signals is equal to the sum of the variances of the desired signal and the noise if the noise and the underlying desired signal are uncorrelated, which is often the case. The MVDR solution therefore aims to reduce this total in order to minimize the impact of the noise.
+### [MVDR](MVDR.m)
+- **Description**: Implements the Minimum Variance Distortionless Response (MVDR) method for DOA estimation.
+- **Details**: The MVDR Beamformer is a data-adaptive beamforming approach that seeks to minimize the output variance. It achieves this by reducing the impact of both the desired signal and noise. This method is effective when the noise and desired signal are uncorrelated.
 
-- [MUSIC](Music.m): The implementation of MUSIC(Multiple signal classification) algorithm for the direction of arrival estimation task. It is a subspace-based method for estimating the DOA of narrowband sources that arrive at a sensor array at the same frequency. When the number of components is known in advance, MUSIC outperforms simple approaches like identifying peaks of DFT spectra in the presence of noise because it uses this information to disregard the noise in its final report.
+### [MUSIC](Music.m)
+- **Description**: Implements the MUSIC (Multiple Signal Classification) algorithm for DOA estimation.
+- **Details**: MUSIC is a subspace-based method designed for estimating the DOA of narrowband sources arriving at a sensor array operating at the same frequency. It outperforms simple peak detection in the presence of noise, especially when the number of source components is known.
 
-- [Root-MUSIC](Root_Music.m): The implementation of Root-MUSIC algorithm for the direction of arrival estimation task.
-The root-MUSIC algorithm is a polynomial form of the MUSIC algorithm. This algorithm adopts the roots of a polynomial to replace the search for spatial spectrum in the MUSIC algorithm, reducing the calculation amount and improving estimation performance.
+### [Root-MUSIC](Root_Music.m)
+- **Description**: Implements the Root-MUSIC algorithm for DOA estimation.
+- **Details**: Root-MUSIC is a polynomial form of the MUSIC algorithm. It employs the roots of a polynomial to identify spatial spectrum peaks, reducing computational complexity while improving estimation performance.
 
-- [MUISIC-Like](Music_Like.m): The implementation of MUSIC-Like algorithm for the direction of arrival estimation task.
-An algorithm called the MUSIC-like algorithm was initially proposed as an alternative method to the MUSIC algorithm for direction-of-arrival estimation. It was shown to have robust performance without requiring explicit model order estimation, particularly in low signal-to-noise ratio (SNR) scenarios.
+### [MUSIC-Like](Music_Like.m)
+- **Description**: Implements the MUSIC-Like algorithm for DOA estimation.
+- **Details**: The MUSIC-Like algorithm serves as an alternative to the MUSIC algorithm for DOA estimation. It exhibits robust performance, particularly in low signal-to-noise ratio (SNR) scenarios, without requiring explicit model order estimation.
 
-- [ESPRIT](Esprit.m): The implementation of ESPRIT (Estimation of Signal Parameters via Rotational Invariance Techniques) algorithm for the direction of arrival estimation task.
-The ESPRIT exploits the rotational invariance property of two identical subarrays and solves the eigenvalues of a matrix relating two signal subspaces. A simple way to construct identical subarrays is to select the first (M − 1) elements and the second to the Mth elements of a ULA.
+### [ESPRIT](Esprit.m)
+- **Description**: Implements the ESPRIT (Estimation of Signal Parameters via Rotational Invariance Techniques) algorithm for DOA estimation.
+- **Details**: ESPRIT leverages the rotational invariance property of two identical subarrays to estimate eigenvalues of a matrix related to signal subspaces. Identical subarrays are constructed by selecting specific elements from a ULA.
 
-- [Linear](linear.m): The implementation of Linear prediction model algorithm for the direction of arrival estimation task.
-The linear prediction-based estimation procedure is commonly used in time series analysis for all pole modeling data. It has also been successfully used in array processing. In this case, one of the sensor outputs is predicted as a linear combination of the remaining sensor outputs at any instant. The predictor coefficients are selected to minimize the mean square error.
+### [Linear Prediction](linear.m)
+- **Description**: Implements a linear prediction model algorithm for DOA estimation.
+- **Details**: Linear prediction-based estimation is commonly used in time series analysis and has been successfully applied in array processing. This method predicts one sensor's output as a linear combination of the remaining sensor outputs, minimizing mean square error.
 
-- [Demo](./Demo/): Contains demo files about implementations of the Base Models' algorithms.
--- Angle.m: Comparison of beamforming and capon method.
--- beamformer_capon_.m: Another version of beamforming and capon implementation
--- corr_beam_capon.m: Examining the beamforming and capon doa estimation methods with different implementation
--- flower.m: Implementation of estimating covariance matrix
--- music.m: Demo implementation for MUSIC algorithm
--- rmse_beam-capon.m: Computing RMSE for comparing capon and beamforming methods
--- shape.m: Estimating the direction of arrival capon and beamforming
+### [Demo](./Demo/)
+This directory contains demo files related to the implementation of the Base Models' algorithms. These files include:
+
+- **Angle.m**: A comparison of beamforming and Capon methods.
+- **beamformer_capon_.m**: An alternative implementation of beamforming and Capon methods.
+- **corr_beam_capon.m**: Examination of beamforming and Capon DOA estimation methods with different implementations.
+- **flower.m**: Implementation of covariance matrix estimation.
+- **music.m**: A demonstration of the MUSIC algorithm.
+- **rmse_beam-capon.m**: Computation of the root mean square error (RMSE) for comparing Capon and beamforming methods.
+- **shape.m**: Estimation of DOA using Capon and beamforming.
+
+Please explore these resources to gain insights into DOA estimation techniques and array signal processing. If you have any questions or require further assistance, feel free to reach out for clarification or discussion.
